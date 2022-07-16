@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -15,10 +16,10 @@ namespace DataAccess.Concrete.InMemory
         {
             _car = new List<Car>
             {
-                new Car{ Id = 1, BrandName = "Audi", BrandId = 1, ModelYear = 2022, ColorId = 128, DailyPrice = 600, Description = "Harder"},
-                new Car{ Id = 2, BrandName = "Mercedes", BrandId = 2, ModelYear = 2016, ColorId = 14, DailyPrice = 300, Description = "Better"},
-                new Car{ Id = 3, BrandName = "Ferrari", BrandId = 3, ModelYear = 1998, ColorId = 255, DailyPrice = 800, Description = "Faster"},
-                new Car{ Id = 4, BrandName = "Bugatti", BrandId = 4, ModelYear = 2020, ColorId = 90, DailyPrice = 1500, Description = "Stronger"}
+                new Car{ CarId = 1, BrandName = "Audi", BrandId = 1, ModelYear = 2022, ColorId = 128, DailyPrice = 600, Description = "Harder"},
+                new Car{ CarId = 2, BrandName = "Mercedes", BrandId = 2, ModelYear = 2016, ColorId = 14, DailyPrice = 300, Description = "Better"},
+                new Car{ CarId = 3, BrandName = "Ferrari", BrandId = 3, ModelYear = 1998, ColorId = 255, DailyPrice = 800, Description = "Faster"},
+                new Car{ CarId = 4, BrandName = "Bugatti", BrandId = 4, ModelYear = 2020, ColorId = 90, DailyPrice = 1500, Description = "Stronger"}
             };
         }
 
@@ -30,23 +31,30 @@ namespace DataAccess.Concrete.InMemory
 
         public void Delete(Car car)
         {
-            Car carToDelete = _car.SingleOrDefault(p => p.Id == car.Id);
+            Car carToDelete = _car.SingleOrDefault(p => p.CarId == car.CarId);
             _car.Remove(carToDelete);
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter)
         {
-            return _car;
+            throw new NotImplementedException();
         }
 
-        public List<Car> GetById(int id)
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            return _car.Where(p => p.Id == id).ToList();
+            throw new NotImplementedException();
+        }
+
+        public Car GetById(int id)
+        {
+            return _car.SingleOrDefault(p => p.CarId == id);
+                //_car.Where(p => p.CarId == id).ToList();
         }
 
         public void Update(Car car)
         {
-            Car carToUpdate = _car.SingleOrDefault(p => p.Id == car.Id);
+            Car carToUpdate = _car.SingleOrDefault(p => p.CarId == car.CarId);
             carToUpdate.BrandId = car.BrandId;
             carToUpdate.BrandName = car.BrandName;
             carToUpdate.ColorId = car.ColorId;
