@@ -36,6 +36,12 @@ namespace Business.Constants
         public static string ColorsListed = "renkler listelendi.";
         public static string ColorInfo = "araba bilgisi listelendi.";
 
+        public static string RentalDateIsNull = "araba teslim edilmemiştir.";
+        public static string RentalAdded = "araba sipariş bilgisi eklendi.";
+        public static string RentalDeleted = "araba sipariş bilgisi silindi.";
+        public static string RentalUpdated = "araba sipariş bilgisi güncellendi.";
+        public static string RentalListed = "araba sipariş bilgileri listelendi.";
+
         public static string Success = "başarılı.";
         public static string Failure = "başarısız.";
 
