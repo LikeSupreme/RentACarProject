@@ -1,5 +1,4 @@
 ﻿using Business.Abstract;
-using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -46,16 +45,16 @@ namespace WebAPI.Controllers
 
         }
 
-        //[HttpPost("add")]
-        //public IActionResult Add(User user)
-        //{
-        //    var result = _userService.Add(user);
-        //    if (result.Success)
-        //    {
-        //        return Ok(result);
-        //    }
-        //    return BadRequest(result);
-        //}
+        [HttpPost("add")]
+        public IActionResult Add(User user)
+        {
+            var result = _userService.Add(user);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         [HttpDelete("delete")]
         public IActionResult Delete(User user)
