@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yusuf\\source\\repos\\RentACarProject\\Core\\Core.csproj": {}
+    "C:\\Users\\yusuf\\source\\repos\\FinalProject\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yusuf\\source\\repos\\RentACarProject\\Core\\Core.csproj": {
+    "C:\\Users\\yusuf\\source\\repos\\FinalProject\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yusuf\\source\\repos\\RentACarProject\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\yusuf\\source\\repos\\FinalProject\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\yusuf\\source\\repos\\RentACarProject\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\yusuf\\source\\repos\\FinalProject\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\yusuf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yusuf\\source\\repos\\RentACarProject\\Core\\obj\\",
+        "outputPath": "C:\\Users\\yusuf\\source\\repos\\FinalProject\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\yusuf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,25 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Autofac.Extras.DynamicProxy": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.11, )"
             }
           },
           "imports": [
