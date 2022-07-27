@@ -2,6 +2,7 @@
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -24,6 +25,8 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
+            IResult result = BusinessRules.Run(CheckIfCarCountOfBrand(car.BrandId));
+
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
         }
@@ -74,5 +77,18 @@ namespace Business.Concrete
             _carDal.Update(car);
             return new SuccessResult(Messages.CarUpdated);
         }
+
+        //----------------------------------------------------------- BUSINESS RULE ENGINE -------------------------------------------------------
+
+        public IResult CheckIfCarCountOfBrand(int brandId)
+        {
+            var result = _carDal.GetAll(c => c.BrandId == brandId).Count;
+            if(result > 15)
+            {
+                return new ErrorResult(Messages.CarInfo);
+            }
+            return new SuccessResult();
+        }
+
     }
 }

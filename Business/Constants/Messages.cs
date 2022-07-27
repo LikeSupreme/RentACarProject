@@ -48,6 +48,12 @@ namespace Business.Constants
         public static string PriceListed = "fiyata göre listelendi.";
         public static string DetailsListed = "detaylar listelendi.";
 
-
+        public static string AuthorizationDenied = "Yetkiniz yok.";
+        public static string UserRegistered = "Kullanıcı kayıt oldu.";
+        public static string UserNotFound = "Kullanıcı bulunamadı.";
+        public static string PasswordError = "Parola hatası.";
+        public static string SuccessfulLogin = "Başarı ile giriş yapıldı.";
+        public static string UserAlreadyExists = "Kullanıcı mevcut";
+        public static string AccessTokenCreated = "Token oluşturuldu.";
     }
 }
